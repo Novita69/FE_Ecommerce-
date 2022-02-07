@@ -1,2 +1,2 @@
 # FE_Ecommerce
-make a frontend e-commerce
+make a Frontend e-commerce with framework React Js
