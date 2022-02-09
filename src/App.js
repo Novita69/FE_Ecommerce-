@@ -1,3 +1,4 @@
+import AuthPages from "./pages/Auth";
 import PageDashboard from "./pages/Dashboard/index";
 // import AddProduct from "./pages/Dashboard/create";
 // import Update from "./pages/Dashboard/update";
@@ -5,7 +6,8 @@ import PageDashboard from "./pages/Dashboard/index";
 function App() {
   return (
     <div className="App">
-      <PageDashboard />
+      {/* <PageDashboard /> */}
+      <AuthPages/>
       {/* <Create />
       <Update /> */}
     </div>

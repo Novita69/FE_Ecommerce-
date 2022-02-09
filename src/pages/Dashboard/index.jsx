@@ -3,6 +3,7 @@ import { Table, Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import AddProduct from "./create";
 import UpdateProduct from "./update";
 
+
 const dummy = [
     {
         "id": "323234342",
