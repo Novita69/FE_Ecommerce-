@@ -1,27 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { Table, Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import React, {
+    useState,
+    useEffect
+} from "react";
+import {
+    Table,
+    Button, Modal,
+    ModalHeader,
+    ModalBody
+} from "reactstrap";
 import AddProduct from "./create";
 import UpdateProduct from "./update";
 
 
-const dummy = [
-    {
-        "id": "323234342",
-        "name": "Baju",
-        "price": 200000,
-        "stock": 200,
-        "category": "pakaian"
-    },
-    {
-        "id": "12121212",
-        "name": "Celana",
-        "price": 100000,
-        "stock": 400,
-        "category": "pakaian"
-    }
-]
+// const dummy = [
+//     {
+//         "id": "323234342",
+//         "name": "Baju",
+//         "quantity": 200,
+//         "price": 200000,
 
-const header = ["No", "Id", "Name", "Price", "Stock", "Category", "Action"];
+
+//     },
+//     {
+//         "id": "12121212",
+//         "name": "Celana",
+//         "quantity": 400,
+//         "price": 100000
+
+
+//     }
+// ]
+
+const header = ["No", "Id", "Name", "Quantity", "Price", "Action"];
 
 const PageDashboard = () => {
 
@@ -41,8 +51,18 @@ const PageDashboard = () => {
 
     }
 
+    const getData = async () => {
+        const {code, product, msg} = await getProducts();
+        if(code === 200) {
+            setData(products)
+        } else {
+            alert(msg)
+        }
+    }
+
     useEffect(() => {
-        setData(dummy);
+        getData();
+        // setData(dummy);
     }, [])
 
 
@@ -78,9 +98,8 @@ const PageDashboard = () => {
                             {/*list data*/}
                             <td>{value.id}</td>
                             <td>{value.name}</td>
+                            <td>{value.quantity}</td>
                             <td>{value.price}</td>
-                            <td>{value.stock}</td>
-                            <td>{value.category}</td>
 
                             {/*Action Button*/}
 

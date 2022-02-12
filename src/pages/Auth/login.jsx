@@ -1,59 +1,40 @@
-import React from "react";
-import {
-    Button,
-    Container,
-    FormFeedback,
-    Input
-} from "reactstrap";
+import { React } from "react";
+import { Button, Container, FormFeedback, Input } from "reactstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-const validationSchema = yup.object().shape({
-    username: yup.string().min(8).required(),
-    email: yup.string().email().required(),
-    password: yup.string().min(8).required(),
-    retypePassword: yup.string().oneOf([yup.ref('password'), null], 'Password Not Match'),
-    address: yup.string().required(),
-    phoneNumber: yup.number().required(),
-    joinDate: yup.string().required()
-})
 
-const Register = () => {
+const validationSchema = yup.object().shape({
+    email: yup.string().email().required(),
+    password: yup.string().min(8).required()
+});
+
+const Login = () => {
+    const handleLogin = async (e) => {
+        alert("Login Success");
+        console.log(e);
+    }
+
 
     const formik = useFormik({
         initialValues: {
-            username: "",
             email: "",
-            password: "",
-            retypePassword: "",
-            address: "",
-            phoneNumber: "",
-            joinDate: ""
-            
+            password: ""
         },
-
         validationSchema: validationSchema,
-        onSubmit: () => handleRegister()
-    })
+        onSubmit: () => handleLogin()
+    });
 
-    const handleRegister = () => {
-        alert("Register Successful!")
-    }
 
-    console.log(
-        formik.values
-    );
     return (
-        <Container className="container-register">
-
-            Register Pages
+        <Container>
             <form onSubmit={formik.handleSubmit}>
                 {
-                    Object.keys(formik.initialValues).map((key, idx) => (
-                        <div key={idx} className="row-input">
+                    Object.keys(formik.initialValues).map((key, index) => (
+                        <div className="row-input">
                             <Input
-                                type={key === "password" || key === "retypePassword" ? "password" : "text"}
                                 id={key}
+                                name={key}
                                 placeholder={key}
                                 value={formik.values[key]}
                                 onChange={formik.handleChange}
@@ -64,22 +45,17 @@ const Register = () => {
                                 formik.touched[key] && Boolean(formik.errors[key]) &&
                                 <FormFeedback className="error-feedback">{formik.errors[key]}</FormFeedback>
                             }
-
                         </div>
                     ))
-
-
                 }
 
                 <Button className="btn-submit" type="submit">
-                    Register
+                    Login
                 </Button>
-
             </form>
-
         </Container>
     )
+
 }
 
-
-export default Register;
+export default Login;

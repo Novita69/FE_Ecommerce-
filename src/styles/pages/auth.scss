@@ -1,3 +1,42 @@
+.auth-pages{
+    border-top: solid 6px pink;
+    border-bottom: solid 6px pink;
+    padding: 0px 50px;
+
+}
+
+.card-auth-page {
+    height: 600px;
+    display: flex;
+    align-items: center;
+
+    .card-inner {
+        width:100%;
+        border: solid 4px pink;
+        border-radius: 10px;
+    }
+}
+
 .container-register {
-    background-color: greenyellow;
+    border: solid 2px gray;
+    background-color: transparent;
+}
+
+.invalid-feedback {
+    font-size: 9px;
+}
+
+.row-input {
+    height: 65px;
+}
+
+.btn-submit{
+    width: 250px;
+    // background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    // color: antiquewhite;
+    padding: 8px;
 }

@@ -11,11 +11,11 @@ import {
 } from "reactstrap";
 
 const initialValue = {
-    id: Math.random * Date.now(),
+    id: Math.random() * Date.now(),
     name: "",
-    price: 0,
-    stock: 0,
-    category: ""
+    quantity: 0,
+    price: 0
+
 }
 
 const UpdateProduct = ({ data, setData, setOpen, editedDataID }) => {
@@ -45,7 +45,7 @@ const UpdateProduct = ({ data, setData, setOpen, editedDataID }) => {
             <Row>
                 <Form onSubmit={handleSubmit}>
                     <>
-                        {/* name */}
+
 
                         <FormGroup>
                             <Label>Name</Label>
@@ -61,7 +61,22 @@ const UpdateProduct = ({ data, setData, setOpen, editedDataID }) => {
                             >
                             </Input>
                         </FormGroup>
-                        {/* price */}
+
+                        <FormGroup>
+                            <Label>Quantity</Label>
+                            <Input
+                                value={form.quantity}
+                                onChange={(e) => setForm(prev => (
+                                    {
+                                        ...prev,
+                                        quantity: e.target.value
+                                    }
+                                ))}
+                                required
+                            >
+                            </Input>
+                        </FormGroup>
+
                         <FormGroup>
                             <Label>Price</Label>
                             <Input
@@ -76,36 +91,7 @@ const UpdateProduct = ({ data, setData, setOpen, editedDataID }) => {
                             >
                             </Input>
                         </FormGroup>
-                        {/* stock */}
-                        <FormGroup>
-                            <Label>Stock</Label>
-                            <Input
-                                value={form.stock}
-                                onChange={(e) => setForm(prev => (
-                                    {
-                                        ...prev,
-                                        stock: e.target.value
-                                    }
-                                ))}
-                                required
-                            >
-                            </Input>
-                        </FormGroup>
-                        {/* category */}
-                        <FormGroup>
-                            <Label>Category</Label>
-                            <Input
-                                value={form.category}
-                                onChange={(e) => setForm(prev => (
-                                    {
-                                        ...prev,
-                                        category: e.target.value
-                                    }
-                                ))}
-                                required
-                            >
-                            </Input>
-                        </FormGroup>
+
                     </>
 
                     <Row>
