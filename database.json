@@ -1,0 +1,16 @@
+{
+  "database": [
+    {
+      "id": "576fc7b0-9321-11ec-9376-035183db45b1",
+      "name": "Baju",
+      "quantity": "1000",
+      "price": "2350000"
+    },
+    {
+      "id": "281609a0-9337-11ec-ba7d-f1c782bec1b4",
+      "name": "Sepatu",
+      "quantity": "400",
+      "price": "6000000"
+    }
+  ]
+}

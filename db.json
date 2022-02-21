@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "name": "afasfafasf",
+      "quantity": "12",
+      "price": "1000",
+      "id": "TlVb0vX"
+    },
+    {
+      "name": "casaca",
+      "quantity": "223",
+      "price": "1000",
+      "id": "8BemnVR"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "1",
+      "email": "testdev@mail.com",
+      "password": "tes12345",
+      "username": "iyurisko"
+    },
+    {
+      "email": "novita9611@gmail.com",
+      "username": "novita1234",
+      "password": "novita1234",
+      "retypePassword": "novita1234",
+      "id": "dhqItip"
+    }
+  ]
+}

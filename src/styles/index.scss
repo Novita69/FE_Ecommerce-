@@ -1,0 +1,27 @@
+.App {
+  // text-align: center;
+  height: max-content;
+  padding: 20px;
+  margin: 0px 50px;
+}
+
+//list component
+
+.footer-container {
+  background-color: lightgray;
+}
+
+// .dashboard-header {
+//     background-color: aqua
+// }
+
+.dashboard-container {
+  min-height: 80vh;
+  background-color: lightgray;
+}
+
+//list containers
+
+// list pages
+@import "./pages/auth.scss";
+@import "./pages/catalog.scss";
